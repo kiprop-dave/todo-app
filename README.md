@@ -41,8 +41,8 @@ Users should be able to:
 
 This app is deployed using Vercel
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/responsive-todo-app-built-using-react-1EJR5nNYqw](https://www.frontendmentor.io/solutions/responsive-todo-app-built-using-react-1EJR5nNYqw)
+- Live Site URL: [https://todo-app-ten-eta.vercel.app/](https://todo-app-ten-eta.vercel.app/)
 
 ## My process
 
