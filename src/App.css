@@ -1,0 +1,248 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+    --light-grey: 	#fafafa;
+    --light-grey-blue: 	#e4e5f1;
+    --dark-grey-blue: #9394a5;
+    --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+    --Very-Dark-Blue: hsl(235, 21%, 11%);
+    --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+    --bright-blue: hsl(220, 98%, 61%);
+}
+input:-webkit-autofill {
+    background: #fff !important;
+}
+.light-background{
+    color: var(--Very-Dark-Grayish-Blue);
+    background-color: var(--light-grey);
+    z-index: 2;
+}
+
+.body-light{
+    background-color: var(--light-grey-blue);
+}
+.body-dark{
+    color: var(--light-grey);
+    background-color: var(--Very-Dark-Blue);
+}
+
+.dark-background{
+    color: var(--light-grey);
+    background-color: var(--Very-Dark-Desaturated-Blue);
+    z-index: 2;
+}
+
+.app-page{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.background-pic{
+    height: 40%;
+    width: inherit;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+}
+.todo-page{
+    margin-top: 6%;
+    width: 50%;
+    padding: 0.1rem;
+}
+nav{
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title{
+    letter-spacing: 10px;
+    font-size: 35px;
+    color: white;
+}
+.toggletheme{
+    cursor: pointer;
+}
+.newtodo{
+    /* border: solid; */
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    justify-content: space-between;
+    border-radius: 7px;
+    margin-top: 2rem;
+}
+.circle-icon{
+    width: 1rem;
+    height: 1rem;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 50%;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+.todo-input{
+    border: none;
+    margin-left: 1rem;
+    height: 100%;
+    font-size: 18px;
+    width: 80%;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.todo-input:focus{
+    outline: none;
+}
+.add-icon{
+    background-image: url(./assets/add-icon.png);
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.todos-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 6px;
+}
+.topcorner{
+    border-radius: 7px 7px 0 0;
+    height: 3px;
+    width: 100%;
+}
+.todo{
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    width: 100%;
+}
+
+.check-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.check-icon:hover{
+    border-color: var(--bright-blue);
+}
+
+.todo-text{
+    margin-left: 1rem;
+}
+.cross-icon{
+    margin-left: auto;
+    margin-right: 1rem;
+    border: none;
+    cursor: pointer;
+}
+.mobile{
+    display: none;
+}
+.status-container{
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    width: 100%;
+    justify-content: space-between;
+}
+.items-left{
+    margin-left: 1rem;
+    opacity: 0.5;
+}
+.clear:hover{
+    cursor: pointer;
+}
+.filter-items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+}
+.light{
+    opacity: 0.5;
+}
+.light:hover{
+    opacity: 1;
+}
+.clear{
+    margin-right: 1rem;
+    opacity: 0.5;
+}
+.clear:hover{
+    opacity: 1;
+}
+.filter-items > span:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .background-pic{
+        height: 30%;
+    }
+    .todo-page{
+        /* border: solid; */
+        width: 90%;
+        margin-top: 12%;
+    }
+    .circle-icon{
+        width: 0.9rem;
+        height: 0.9rem;
+        margin-left: 0.6rem;
+    }
+    .todo{
+        position: relative;
+    }
+    .cross-icon{
+        background-image: url(./assets/icon-cross.svg);
+        z-index: 2;
+        position: absolute;
+        right: 1px;
+    }
+    .mobile{
+        display: block;
+    }
+    .status-container{
+        display: grid;
+        grid-template-areas: 'a b'
+                             'c c';
+        border-width: 1px;
+        row-gap: 1rem;
+        
+    }
+    .items-left{
+        left: 1px;
+        grid-area: a;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+    }
+    .filter-items{
+        grid-area: c;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 3rem;
+        border-radius: 7px;
+        justify-content: center;
+    }
+    .filter-items > span{
+        margin-right: 1rem;
+    }
+    .clear{
+        right: 0.6rem;
+        grid-area: b;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+    }
+}
