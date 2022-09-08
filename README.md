@@ -14,6 +14,7 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
+- [Acknowledgements](#acknowledgements)
 
 ## Overview
 
@@ -21,15 +22,15 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 
 Users should be able to:
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Add new todos to the list
-- Mark todos as complete
-- Delete todos from the list
-- Filter by all/active/complete todos
-- Clear all completed todos
-- Toggle light and dark mode
-- **Bonus**: Drag and drop to reorder items on the list
+- View the optimal layout for the app depending on their device's screen size ✅
+- See hover states for all interactive elements on the page ✅
+- Add new todos to the list ✅
+- Mark todos as complete ✅
+- Delete todos from the list ✅
+- Filter by all/active/complete todos ✅
+- Clear all completed todos ✅
+- Toggle light and dark mode ✅
+- **Bonus**: Drag and drop to reorder items on the list ✅
 
 ### Screenshot
 
@@ -71,7 +72,7 @@ useEffect(() => {
 
 ### Continued development
 
-I didn't manage to do the last bonus objective. I plan on doing some research on it and add that feature. I also plan on making this app a fullstack CRUD app by integrating it with firebase.
+I plan on making this app a fullstack CRUD app by integrating it with firebase.
 
 ### Useful resources
 
@@ -83,3 +84,7 @@ I didn't manage to do the last bonus objective. I plan on doing some research on
 
 - Website - [tanuikiprop](https://www.tanuikiprop.gq/)
 - Frontend Mentor - [@kiprop-dave](https://www.frontendmentor.io/profile/kiprop-dave)
+
+## Acknowledgements
+
+I learnt how to drag items in a list from [this video](https://www.youtube.com/watch?v=CYKDtVZr_Jw&list=PLmIrBYSMth7g2jdEQLucaclCuC81EjzBp&index=3&ab_channel=Bikashweb)

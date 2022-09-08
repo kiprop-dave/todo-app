@@ -1,4 +1,4 @@
-import React, { createContext,useState,useEffect } from "react";
+import React, { createContext,useState,useEffect, useRef} from "react";
 import {nanoid} from "nanoid"
 
 const Context = createContext()
@@ -19,6 +19,7 @@ function TodosContextProvider({children}){
     useEffect(()=>{
         localStorage.setItem("todoItems",JSON.stringify(todos))
     },[todos])
+
 
     const [isLightMode, setIsLightMode] = useState(false)
 
@@ -113,10 +114,37 @@ function TodosContextProvider({children}){
         setTodosCopy(prev => prev.filter(item => item.isCompleted === false))
     }
 
+    //drag items
+
+    //save reference for dragItem and dragOverItem
+    const dragItem = useRef(null)
+    const dragOverItem = useRef(null)
+
+    //handle drag sorting
+    const handleSort =() =>{
+        //duplicate items
+        const _todos = [...todosCopy]
+
+        //remove and save the dragged item Content
+        const draggedItemContent = _todos.splice(dragItem.current, 1)[0]
+
+        //switch positions
+        _todos.splice(dragOverItem.current,0,draggedItemContent)
+
+        //reset the position ref
+        dragItem.current = null;
+        dragOverItem.current = null;
+
+        //update the array
+        setTodos(_todos)
+        setTodosCopy(_todos)
+    }
+
     const values ={
         todos,backgroundClass,changeBackground,isLightMode,
         handleInput,todo,createTodos,handleCheck,handleDelete,todosCopy,
-        clearCompleted,showCompleted,showActive,showAll,bodyClass
+        clearCompleted,showCompleted,showActive,showAll,bodyClass,dragItem,
+        dragOverItem,handleSort
     }
 
 

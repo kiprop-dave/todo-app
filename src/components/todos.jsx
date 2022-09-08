@@ -10,7 +10,7 @@ export default function Todos(){
    
 
     const todoElements = todos.map((thistodo,index) =>(
-        <Todo key={index} todo={thistodo} />
+        <Todo key={index} todo={thistodo} index ={index}/>
     ))
     return(
         <div className={`todos-container ${backgroundClass}`}>

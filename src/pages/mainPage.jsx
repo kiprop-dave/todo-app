@@ -23,6 +23,7 @@ export default function MainPage(){
                 <NewTodo/>
                 <Todos/>
             </div>
+            <div className="drag">Drag and drop to reorder list</div>
         </div>
     )
 }

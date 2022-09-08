@@ -4,12 +4,14 @@ import checkIcon from "../assets/icon-check.svg"
 import crossIcon from "../assets/icon-cross.svg"
 
 
-export default function Todo({todo}){
+export default function Todo({todo,index}){
     const [isHovered, setIsHovered] = useState(false)
 
     const {todoText,id,isCompleted} = todo
     
-    const {backgroundClass,handleCheck,handleDelete,isLightMode} = useContext(Context)
+    const {backgroundClass,handleCheck,handleDelete,
+        isLightMode,dragItem,dragOverItem,handleSort
+    } = useContext(Context)
 
     function getBackgroundCheck(){
         if(isCompleted){
@@ -38,7 +40,7 @@ export default function Todo({todo}){
     const textStyle ={
         textDecoration: isCompleted ? "line-through" : "none" ,
         opacity: isCompleted ? "0.5" : "1" ,
-        fontSize: "12px"
+        fontSize: "16px"
     }
 
 
@@ -46,7 +48,13 @@ export default function Todo({todo}){
         <>
             <div className={`todo ${backgroundClass}`}
                 onMouseEnter={()=> setIsHovered(true)}
-                onMouseLeave={()=> setIsHovered(false)}>
+                onMouseLeave={()=> setIsHovered(false)}
+                draggable
+                onDragStart={(e)=> (dragItem.current = index)}
+                onDragEnter ={(e)=>(dragOverItem.current = index)}
+                onDragEnd ={handleSort}
+                onDragOver ={(e) => e.preventDefault()}
+                >
                 <div className={`circle-icon check-icon`}
                 onClick={(e)=>handleCheck(e,id)} style={checkDark}>
                     {
